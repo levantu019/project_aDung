@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div id="map" class="map"></div>
+
+    <div id="position_mouse" style="position: absolute; right: 10px; bottom: 10px;"></div>
+    
+    <div class="directions">
+        <button class="my-control btn-directions" title="Tìm đường đi">
+            <i class="fas fa-directions"></i>
+        </button>
+        <div class="directions-form">
+            <div class="location start">
+                <img class="location-icon" src="../static/icons/location_green.png" />
+                <input class="location-value location-start" type="text" placeholder="Bắt đầu" />
+            </div>
+            <div class="location end">
+                <img class="location-icon" src="../static/icons/location_red.png" />
+                <input class="location-value location-end" type="text" placeholder="Kết thúc" />
+            </div>
+            <div class="location end">
+                <div class="location-icon"></div>
+                <select class="location-value move_method">
+                    <option value="foot">Foot</option>
+                    <option value="bike">Bike</option>
+                    <option value="moto">Moto</option>
+                    <option value="car">Car</option>
+                </select>
+            </div>
+            <div class="location end">
+                <div class="location-icon"></div>
+                <button class="btn-search">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="contextMenu" class="context-menu" style="display: none">
+    <ul>
+        <li class="choice-start"><span>Xuất phát</span>
+        <li class="choice-end"><span>Kết thúc</span>
+        <li class="choice-current"><span>Vị trí của tôi</span>
+    </ul>
+</div>
+
+    <script>
+        $(".directions-form").hide();
+        $(".btn-directions").click(function() {
+            $(".directions-form").toggle();
+        })
+    </script>
+{% endblock %}

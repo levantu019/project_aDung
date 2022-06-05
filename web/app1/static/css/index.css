@@ -1,0 +1,104 @@
+#map{
+    width: 100%;
+    height: 100%;
+}
+
+/* Button + Form direction */
+.directions{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+/* Style control */
+.my-control{
+    display: block;
+    margin: 1px;
+    padding: 0;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: inherit;
+    text-align: center;
+    height: 30px;
+    width: 30px;
+    line-height: 0.4em;
+    background-color: rgba(0, 60, 136, 0.8);
+    border: none;
+    border-radius: 4px;
+}
+
+.my-control:hover{
+    cursor: pointer;
+}
+
+/*  */
+.directions-form{
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color:rgb(247,247,247);
+    box-shadow: 0px 8px 20px 0px rgb(0 0 0 / 15%);
+    border-radius: 10px;
+    padding: 0 10px;
+    z-index: 5;
+    padding: 20px 20px 20px 15px;
+    position: relative;
+}
+
+.location{
+    display: flex;
+    gap: 10px;
+}
+
+.location-icon{
+    width: 15px;
+    height: 25px;
+}
+
+/* input location of directions */
+.location-value{
+    flex: 1;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(0 0 0 / 15%);
+    height: 25px;
+    width: 250px;
+}
+
+.btn-search{
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3d6bff;
+    border-color: #3d6bff;
+}
+
+/* right click */
+.context-menu {
+    position: absolute;
+    text-align: center;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    z-index: 5;
+    box-shadow: 0px 8px 20px 0px rgb(0 0 0 / 15%);
+}
+
+.context-menu ul {
+    padding: 0px;
+    margin: 0px;
+    min-width: 120px;
+    list-style: none;
+}
+
+.context-menu ul li {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.context-menu ul li:hover {
+    background: lightgrey;
+}
