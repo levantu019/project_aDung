@@ -52,6 +52,9 @@ graphhopper:
       weighting: fastest
     - name: bike
       vehicle: bike
+      weighting: fastest    
+    - name: motorcycle
+      vehicle: motorcycle
       weighting: fastest
     - name: car
       vehicle: car
@@ -74,6 +77,7 @@ graphhopper:
   profiles_ch:
     - profile: foot
     - profile: bike
+    - profile: motorcycle
     - profile: car
   #   - profile: car_with_turn_costs
 
