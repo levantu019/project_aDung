@@ -75,6 +75,51 @@
     border-color: #3d6bff;
 }
 
+/*  */
+.instruction-wrapper{
+    display: flex;
+    background: white;
+    flex-direction: column;
+    padding: 0px 20px 20px 15px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.instruction-title{
+    height: 120px;
+}
+
+.instruction-detail{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.detail-item{
+    min-height: 30px;
+    /* line-height: 30px; */
+    border: none;
+    border-bottom: inset;
+    display: flex;
+}
+
+.item-icon{
+    width: 20px;
+}
+
+.item-icon img{
+    max-width: 16px;
+    max-height: 24px;
+}
+
+.item-content{
+    flex: 1;
+}
+
+.item-distance{
+    width: 50px;
+}
 /* right click */
 .context-menu {
     position: absolute;
@@ -108,7 +153,25 @@
 
 /* Responsive */
 @media only screen and (max-width: 600px){
-    .direction{
+    .directions{
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    .my-control{
         display: none;
     }
+
+    .directions-form{
+        top: 0;
+        width: 100%;
+    }
+
+    .menu{
+        display: block;
+        width: 100px;
+    }
+
+
 }

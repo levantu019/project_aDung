@@ -57,7 +57,38 @@ function showResultWay(data){
 }
 
 // Chi tiết hướng đãn đường đi
-function showResultInstruction(){
+function showResultInstruction(data){
+    // Remove all child in instructions
+    $(".instructions").empty();
+
+    const distance = data.distance;
+    const instructions = data.instructions;
+
+    var instruction_wrapper = `<div class="instruction-wrapper">
+                                    <div class="instruction-title">
+                                        <h2>Hướng dẫn</h2>
+                                        <p>Khoảng cách: ${distance}m</p>
+                                    </div>
+                                    <div class="instruction-detail">
+                                        
+                                    </div>
+                                </div>`
+    $(".instructions").append(instruction_wrapper);
+
+    for(let i=0; i<instructions.length; i++){
+        let detail_item = `<div class="detail-item">
+                            <div class="item-icon"><img src="http://127.0.0.1:8000/icon/${instructions[i].sign}"/></div>
+                            <div class="item-content">
+                                <div style="max-width: 175px">${instructions[i].text}</div>
+                            </div>
+                            <div class="item-distance">
+                                ${instructions[i].distance}m
+                            </div>
+                        </div>`
+
+        $(".instruction-detail").append(detail_item);
+    }
+
 
 }
 
@@ -75,5 +106,6 @@ $(".btn-search").click(function(){
     .then(res => {
         var geojson = JSON.parse(res);
         showResultWay(geojson.paths[0].points);
+        showResultInstruction(geojson.paths[0]);
     });
 })
