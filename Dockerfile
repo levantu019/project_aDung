@@ -1,4 +1,4 @@
-FROM mypython:latest
+FROM python:3.9.13-slim-buster
 
 ENV PYTHONUNBUFFERED 1
 
