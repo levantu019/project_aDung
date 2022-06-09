@@ -1,0 +1,38 @@
+version: '3'
+
+# NETWORK
+networks: 
+  my-network:
+    driver: bridge
+
+
+services:
+  # 
+  graph-hopper:
+    image: israelhikingmap/graphhopper:latest
+    environment:
+      JAVA_OPTS: "-Xmx1g -Xms1g"
+    volumes:
+      - ./graphhopper:/myweb
+    networks:
+      - my-network
+    ports:
+      - "8989:8989"
+    command:
+      "-i /myweb/map1.osm -c /myweb/config-example.yml --host 0.0.0.0"
+   # CONTAINER WEB DJANGO
+  web:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./web:/myweb
+    networks:
+      - my-network
+    command:
+      sh -c "python manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - graph-hopper
+

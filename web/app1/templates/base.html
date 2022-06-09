@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <link rel="stylesheet" href="{% static 'font/css/all.css' %}">
+
+    <script type="text/javascript" src="{% static 'js/jquery-3.6.0.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/ol.js' %}"></script>
+
+    <title>My Map</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">Map - Tìm đường</div>
+            <div class="menu">
+                <button class="btn-directions" style="background-color: white; font-size: 24px; border: none"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+        
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+
+    <script type="text/javascript" src="{% static 'js/script_map.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/script_mouse.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/script_style.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/script_main.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/script_other.js' %}"></script>
+</body>
+</html>

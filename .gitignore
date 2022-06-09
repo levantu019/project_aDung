@@ -1,0 +1,5 @@
+venv
+logs
+graph-cache
+graphhopper/map1-gh
+web/app1/static/icons/graphhopper_icon
