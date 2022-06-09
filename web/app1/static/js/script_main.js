@@ -1,4 +1,4 @@
-const url_base = "http://gis.hometech.vn:8989/route?";
+const url_base = "http://gis.homtech.vn:8989/route?";
 
 // Nếu có đầy đủ điểm đầu và điểm cuối thì tự động run
 function CheckInput(){
@@ -77,7 +77,7 @@ function showResultInstruction(data){
 
     for(let i=0; i<instructions.length; i++){
         let detail_item = `<div class="detail-item">
-                            <div class="item-icon"><img src="http://127.0.0.1:8000/icon/${instructions[i].sign}"/></div>
+                            <div class="item-icon"><img src="http://gis.homtech.vn:8000/icon/${instructions[i].sign}"/></div>
                             <div class="item-content">
                                 <div style="max-width: 175px">${instructions[i].text}</div>
                             </div>
