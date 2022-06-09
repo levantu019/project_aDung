@@ -1,4 +1,4 @@
-const url_base = "http://localhost:8989/route?";
+const url_base = "http://gis.hometech.vn:8989/route?";
 
 // Nếu có đầy đủ điểm đầu và điểm cuối thì tự động run
 function CheckInput(){

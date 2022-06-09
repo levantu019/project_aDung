@@ -2,6 +2,7 @@
 Tìm đường
 
 # Run project (use Docker)
+- Docker compose:
     ```
     docker-compose up
     ```

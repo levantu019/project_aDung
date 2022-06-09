@@ -2,8 +2,9 @@ version: '3'
 
 # NETWORK
 networks: 
-  my-network:
-    driver: bridge
+    default:
+      aliases:
+        - my-network
 
 
 services:
