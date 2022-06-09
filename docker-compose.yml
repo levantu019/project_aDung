@@ -8,19 +8,19 @@ networks:
 
 services:
   # 
-  # graph-hopper:
-  #   image: israelhikingmap/graphhopper:latest
-  #   environment:
-  #     JAVA_OPTS: "-Xmx1g -Xms1g"
-  #   volumes:
-  #     - ./graphhopper:/myweb
-  #   networks:
-  #     - my-network
-  #   ports:
-  #     - "8989:8989"
-  #   command:
-  #     /bin/bash -c "java -Ddw.graphhopper.datareader.file=./graphhopper/map1.osm -jar ./graphhopper/graphhopper-web-5.1.jar server ./graphhopper/config-example.yml"
-  # CONTAINER WEB DJANGO
+  graph-hopper:
+    image: israelhikingmap/graphhopper:latest
+    environment:
+      JAVA_OPTS: "-Xmx1g -Xms1g"
+    volumes:
+      - ./graphhopper:/myweb
+    networks:
+      - my-network
+    ports:
+      - "8989:8989"
+    command:
+      "-i /myweb/map1.osm -c /myweb/config-example.yml --host 0.0.0.0"
+   # CONTAINER WEB DJANGO
   web:
     build:
       dockerfile: Dockerfile
@@ -33,6 +33,6 @@ services:
       - my-network
     command:
       sh -c "python manage.py runserver 0.0.0.0:8000"
-    # depends_on:
-    #   - graph-hopper
+    depends_on:
+      - graph-hopper
 
